@@ -20,10 +20,10 @@ task0:
 task0body:
 	
     add     $t0, $0, $0
-	jal ts     
+    jal ts     
     addi    $t1, $0, 10
     la      $s0, str0
-	jal ts
+    jal ts
     
 beg0:
     
@@ -33,26 +33,26 @@ beg0:
     mult    $t0, $t1
     mflo    $t0
     add     $t0, $t0, $t2
-	jal ts
+    jal ts
     add     $s0, $s0, 1
     b beg0
     
 quit0:
     
-	jal ts
-	add     $v1, $0, $t0
-	add     $s0, $0, $v1
-	add     $a1, $0, $s0
-	jal ts
-	add     $t5, $0, $a1
-	add     $t6, $0, $t5
-	addi    $s0, $0, 1
-	add     $v0, $0, $s0
-	add     $a0, $0, $t6
-	jal ts
-	syscall
+    jal ts
+    add     $v1, $0, $t0
+    add     $s0, $0, $v1
+    add     $a1, $0, $s0
+    jal ts
+    add     $t5, $0, $a1
+    add     $t6, $0, $t5
+    addi    $s0, $0, 1
+    add     $v0, $0, $s0
+    add     $a0, $0, $t6
+    jal ts
+    syscall
     addi    $t7, $t7, -1
-	beq     $t7, $0, done
+    beq     $t7, $0, done
     
     j task0body
     
@@ -70,7 +70,7 @@ beg1:
     
     lb      $t2, ($s0)
     beq     $t2, $0, quit1
-	jal ts
+    jal ts
     sub     $t2, $t2, '0'
     mult    $t0, $t1
     mflo    $t0
@@ -80,22 +80,22 @@ beg1:
     
 quit1:
     
-	add     $v1, $0, $t0
-	add     $s0, $0, $v1
-	jal ts
-	add     $a1, $0, $s0
-	add     $t5, $0, $a1
-	jal ts
-	add     $t6, $0, $t5
-	jal ts
-	addi    $s0, $0, 1
-	add     $v0, $0, $s0
-	jal ts
-	add     $a0, $0, $t6
-	jal ts
-	syscall
-	addi    $t7, $t7, -1
-	beq     $t7, $0, done
+    add     $v1, $0, $t0
+    add     $s0, $0, $v1
+    jal ts
+    add     $a1, $0, $s0
+    add     $t5, $0, $a1
+    jal ts
+    add     $t6, $0, $t5
+    jal ts
+    addi    $s0, $0, 1
+    add     $v0, $0, $s0
+    jal ts
+    add     $a0, $0, $t6
+    jal ts
+    syscall
+    addi    $t7, $t7, -1
+    beq     $t7, $0, done
     j task1body
     
 done:
