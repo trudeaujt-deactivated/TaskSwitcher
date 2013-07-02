@@ -1,4 +1,4 @@
-.data
+.data 
 .align 2
 tid:        .word 0
 tcb0:       .space 120
